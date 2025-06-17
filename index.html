@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>San Valentin</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Recuerdo para Ti 💌</title>
 </head>
-
 <body>
-  <main>
-    <div id="message">
-      <h1>Siempre supe que dirias que sí, Shir <br>♥</h1>
-      <img src="./assets/dino_love_2.webp" width="250" alt="Dino Love">
-    </div>
-    <img src="./assets/dino_love.webp" width="250" alt="Dino Love">
-    <h1>¿Me perdonas Shir?</h1>
-    <div class="options">
-      <button id="yes">Si</button>
-      <button id="no">No</button>
-    </div>
-  </main>
+  <h1>Haz clic en el sobre Jaque💖</h1>
 
-  <script src="script.js"></script>
+  <div class="contenedor" id="contenedor">
+    <div class="envoltura-sobre" id="sobre">
+      <div class="sobre"></div>
+      <div class="carta" id="cartaId">
+        <
+      </div>
+      <div class="corazon" id="corazon1"></div>
+    </div>
+    
+    <div class="fotos" id="fotos">
+      <img src="foto2.jpeg" alt="Tú" class="foto-romantica">
+      <img src="foto1.jpeg" alt="Ella" class="foto-romantica">
+    </div>
+    <h1 id="pregunta" class="oculto">¿Quieres ser mi ama?</h1>
+
+  </div>
+
+  <audio id="musicaFondo" loop>
+    <source src="musica.m4a" type="audio/mp4" />
+    Tu navegador no soporta audio HTML.
+  </audio>
+
+  <script src="script_v2.js"></script>
 </body>
-
 </html>

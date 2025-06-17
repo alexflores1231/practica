@@ -1,119 +1,184 @@
-/* reset css */
-
+/* RESET */
 * {
-    min-width: 0;
-    font: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Marck Script', cursive;
+  background: linear-gradient(to bottom, #1b2735, #090a0f);
+  background: url('./yoruname.jpg') no-repeat center center fixed;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+/* TÍTULO */
+h1 {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #9c2f9c;
+}
+
+/* SOBRE */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+  width: 80%;
+  max-width: 200px;
+  background-color: transparent;
+}
+
+.envoltura-sobre {
+  position: relative;
+  background-color: #fff0f5;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.4);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.sobre {
+  width: 100%;
+  height: 250px;
+  background: #ffcdd9;
+  border-radius: 0 0 15px 15px;
+}
+
+.sobre::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 150px solid #ffafcc;
+  border-left: 50% solid transparent;
+  border-right: 50% solid transparent;
+  z-index: 3;
+  border-radius: 10px;
+}
+.oculto {
+  display: none;
+}
+
+.carta {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.contenido {
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+}
+
+.corazon     {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #f55da9;
+  transform: translate(-50%, -50%) rotate(45deg);
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+}
+
+.corazon::before,
+.corazon::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+}
+
+.corazon::before {
+  top: -15px;
+  left: 0;
+}
+
+.corazon::after {
+  left: 15px;
+  top: 0;
+}
+
+.solapa-derecha,
+.solapa-izquierda {
+  display: none; /* ocultamos si no se usan */
+}
+
+/* FOTOS */
+.fotos {
+  display: none;
+  flex-wrap: column;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.fotos.mostrar {
+  display: flex;
+  flex-direction: wrap;
+}
+.frase-romantica{
+    font-size: 1.2em;
+    color: #ff69b4;
+    text-align: top;
+    margin-bottom: 20px;
+}
+.foto-romantica {
+  width: 200px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  transition: transform 0.3s ease;
+}
+
+
+.foto-romantica:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
   }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+
+  .sobre {
+    height: 200px;
   }
-  
-  img,
-  video,
-  svg {
-    display: block;
-    height: auto;
-    max-width: 100%;
+
+  .sobre::before {
+    border-top: 120px solid #ffafcc;
   }
-  
-  body {
-    margin: 0;
-    min-height: 100dvh;
+
+  .carta .contenido {
+    font-size: 14px;
   }
-  
-  h1,
-  h2,
-  h3 {
-    text-wrap: balance;
+
+  .foto-romantica {
+    max-width: 90%;
   }
-  
-  p {
-    text-wrap: pretty;
-  }
-  
-  /* starts here */
-  
-  body {
-    background-color: palegoldenrod;
-    height: 100vh;
-  
-    & main {
-  
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  
-      & h1 {
-        font-size: 2.5rem;
-        text-align: center;
-        font-weight: 700;
-      }
-  
-      & .options {
-        font-size: 1.5rem;
-        font-weight: 600;
-  
-  
-        & button {
-          padding: .5rem 1.5rem;
-          border: 2px solid rgba(0, 0, 0, .9);
-          border-radius: 5px;
-          cursor: pointer;
-          box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-        }
-  
-        & button:hover {
-          box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
-        }
-  
-        & button#yes {
-          background-color: #97cfaa;
-          margin-right: 2rem;
-        }
-  
-        & button#no {
-          background-color: #f36c46;
-        }
-      }
-    }
-  }
-  
-  #message {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(165, 215, 224);
-    /* display: flex; */
-    display: none;
-    justify-content: center;
-    align-items: center;
-  
-    & h1 {
-      font-size: 3rem;
-      text-align: center;
-      font-weight: 600;
-      animation: palpitation 2s ease-in-out infinite;
-      line-height: 4rem;
-    }
-  }
-  
-  @keyframes palpitation {
-    0% {
-      transform: scale(1);
-    }
-  
-    50% {
-      transform: scale(1.1);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
-  } 
+}
